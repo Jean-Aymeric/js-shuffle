@@ -7,7 +7,7 @@ function factorial(n) {
 }
 
 function getDraw(arrayLength) {
-    return Math.floor(Math.random() * factorial(array.length));
+    return Math.floor(Math.random() * factorial(arrayLength));
 }
 
 function drawToCombination(draw, array) {
