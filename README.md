@@ -23,16 +23,16 @@ array = ['A', 'B', 'C', 'D']
 There are 4! distinct anagrams :
 |#|0|1|2|3|
 |-|-|-|-|-|
-|0|A|B|C|D|
-|1|A|C|D|B|
-|2|A|D|B|C|
-|3|A|B|D|C|
-|4|A|C|B|D|
-|5|A|D|C|B|
-|6|B|A|C|D|
-|7|B|C|D|A|
-|8|B|D|A|C|
-|9|B|A|D|C|
+| 0|A|B|C|D|
+| 1|A|C|D|B|
+| 2|A|D|B|C|
+| 3|A|B|D|C|
+| 4|A|C|B|D|
+| 5|A|D|C|B|
+| 6|B|A|C|D|
+| 7|B|C|D|A|
+| 8|B|D|A|C|
+| 9|B|A|D|C|
 |10|B|C|A|D|
 |11|B|D|C|A|
 |12|C|A|B|D|
@@ -48,5 +48,10 @@ There are 4! distinct anagrams :
 |22|D|B|A|C|
 |23|D|C|B|A|
 
+We can notice that the element present in position 0 is the element whose index corresponds to the division of the state number by 6.
+6 corresponds to 3!, that is to say the factorial preceding that of the size of the array (4!).
+So we can write: `shuffle[0] = draw / factorial (array.length - 1)`
 
+Then the index of the following elements corresponds to the remainder of the Euclidean division of the state number by the number of remaining elements to be placed.
 
+`shuffle[i] = draw % array.length` _each placed element is removed from the array, so the array size decreases._
