@@ -35,15 +35,17 @@ function factorial(n) {
     return result;
 }
 
-function JADShuffleSimpleVersion(array) {
+function JADShuffleSimpleVersion(array, draw = null) {
     let tempArray = [...array];
     let result = [];
-    const draw = Math.floor(Math.random() * factorial(array.length));
+    if (draw == null) {
+        draw = Math.floor(Math.random() * factorial(array.length));
+    }
     let index = Math.trunc(draw / factorial(tempArray.length - 1));
-    for (let i = 1; i < initialLength; i ++) {
+    for (let i = 0; i < array.length; i ++) {
         result.push(tempArray[index]);
         tempArray.splice(index, 1);
-        index = draw % (initialLength - i);
+        index = draw % (array.length - (i+1));
     }
     return result;
 }
@@ -63,7 +65,7 @@ function FisherYatesShuffle(array) {
 
 let array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K','L','M','N','O','P','Q','R'];
 let initialLength = array.length;
-const nbTests = 10000000;
+const nbTests = 1;
 let t0, t1;
 
 t0 = new Date().getTime();
@@ -92,3 +94,6 @@ for(let i = 0; i < nbTests; i++) {
 t1 = new Date().getTime();
 console.log("Fisher-Yates shuffle " + (t1 - t0) + " ms.");
 
+for(let i = 0; i < 24; i++) {
+    console.log(JADShuffleSimpleVersion(['A', 'B', 'C', 'D'], i));
+}
