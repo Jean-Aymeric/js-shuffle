@@ -1,5 +1,4 @@
 # An experience of implementing an array shuffle algorithm
-![Eslint](https://github.com/Jean-Aymeric/js-shuffle/workflows/Eslint/badge.svg)
 
 Author : [jeanaymeric@gmail.com](mailto:jeanaymeric@gmail.com")
 
@@ -17,7 +16,7 @@ If we find a function allowing to transform this state number into a combination
 then it would be possible to call the random function only once.
 It turns out that the function exists, it is also not very complicated.
 
-##With an example I think it will be simpler :
+## With an example I think it will be simpler :
 array = ['A', 'B', 'C', 'D']
 
 There are 4! distinct anagrams :
