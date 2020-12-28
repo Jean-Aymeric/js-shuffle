@@ -67,9 +67,17 @@ function FisherYatesShuffle(array) {
 
 let array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K','L','M','N','O','P','Q','R'];
 let initialLength = array.length;
-const nbTests = 5;
+const nbTests = 10000000;
+let t0, t1;
 
-let t0 = new Date().getTime();
+t0 = new Date().getTime();
+for(let i = 0; i < nbTests; i++) {
+    JADShuffleSimpleVersion(array);
+}
+t1 = new Date().getTime();
+console.log("My simple shuffle " + (t1 - t0) + " ms.");
+
+t0 = new Date().getTime();
 const fact = factorialNAndFactorialN_1(initialLength);
 if (Number.isSafeInteger(fact.n)) {
     for(let i = 0; i < nbTests; i++) {
@@ -78,8 +86,8 @@ if (Number.isSafeInteger(fact.n)) {
 } else {
     console.log("Array too big");
 }
-let t1 = new Date().getTime();
-console.log("My shuffle " + (t1 - t0) + " ms.");
+t1 = new Date().getTime();
+console.log("My advanced shuffle " + (t1 - t0) + " ms.");
 
 t0 = new Date().getTime();
 for(let i = 0; i < nbTests; i++) {
@@ -87,3 +95,4 @@ for(let i = 0; i < nbTests; i++) {
 }
 t1 = new Date().getTime();
 console.log("Fisher-Yates shuffle " + (t1 - t0) + " ms.");
+
