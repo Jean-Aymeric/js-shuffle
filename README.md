@@ -55,3 +55,18 @@ So we can write: `shuffle[0] = draw / factorial (array.length - 1)`
 Then the index of the following elements corresponds to the remainder of the Euclidean division of the state number by the number of remaining elements to be placed.
 
 `shuffle[i] = draw % array.length` _each placed element is removed from the array, so the array size decreases._
+
+```javascript
+function JADShuffleSimpleVersion(array) {
+    let tempArray = [...array]; // the array is copied in a new array to not alter the parameter
+    let result = [];
+    const draw = Math.floor(Math.random() * factorial(array.length));   // a state is randomly taken
+    let randomIndex = Math.trunc(draw / factorial(tempArray.length - 1));   // the first index is calculting outside the loop
+    for (let currentIndex = 0; currentIndex < array.length; currentIndex ++) {
+        result.push(tempArray[randomIndex]);
+        tempArray.splice(randomIndex, 1);   // The placed element is removed from the array
+        randomIndex = draw % (array.length - (currentIndex + 1));   // calculation of the following index
+    }
+    return result;
+}
+```
