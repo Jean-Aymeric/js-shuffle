@@ -1,3 +1,8 @@
+/**
+ * Calculate n! and (n-1)!
+ * @param {number} n
+ * @returns {{n_1: number, n: number}}
+ */
 function factorialNAndFactorialN_1(n) {
     let result = 1;
     for (let i = 1; i < n; i ++) {
@@ -9,6 +14,12 @@ function factorialNAndFactorialN_1(n) {
     };
 }
 
+/**
+ * Get a random shuffle of an array
+ * @param {any[]} array
+ * @param {{n_1: number, n: number}} factorial
+ * @returns {any[]}
+ */
 function JADShuffleOptimisedVersion(array, factorial) {
     let tempArray = [...array];
     const draw = Math.floor(Math.random() * factorial.n);
@@ -27,6 +38,11 @@ function JADShuffleOptimisedVersion(array, factorial) {
     return result;
 }
 
+/**
+ * Calculate n!
+ * @param {number} n
+ * @returns {number}
+ */
 function factorial(n) {
     let result = 1;
     for (let i = 1; i <= n; i ++) {
@@ -35,6 +51,11 @@ function factorial(n) {
     return result;
 }
 
+/**
+ * Get a random shuffle of an array
+ * @param {any[]} array
+ * @returns {any[]}
+ */
 function JADShuffleSimpleVersion(array) {
     let tempArray = [...array];
     let result = [];
