@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>An experience of implementing an array shuffle algorithm</h1>
+<p>Author : <a href="mailto:jeanaymeric@gmail.com%22">jeanaymeric@gmail.com</a></p>
+<p>JsDoc : <a href="https://jean-aymeric.github.io/js-shuffle/">https://jean-aymeric.github.io/JSGraph/</a></p>
+<p>I wanted to try a new algorithm for shuffling an array.
+It's not really about making a faster one, but rather to explore a new path.</p>
+<p>Usually, the shuffle algorithm applies a random on each array element.
+It is the element that decides its own place in the table.
+However, we can consider that it is the array which decide where to place its elements.
+Thus, the different mix of an array are just the different states that it can have.
+That's a lot of different states, exactly n!, n is the size of the array,
+If we find a function allowing to transform this state number into a combination of elements,
+then it would be possible to call the random function only once.
+It turns out that the function exists, it is also not very complicated.</p>
+<h2>With an example I think it will be simpler :</h2>
+<p>array = ['A', 'B', 'C', 'D']</p>
+<p>There are 4! distinct anagrams :</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+</tr>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>C</td>
+<td>D</td>
+<td>B</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A</td>
+<td>D</td>
+<td>B</td>
+<td>C</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>B</td>
+<td>D</td>
+<td>C</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A</td>
+<td>C</td>
+<td>B</td>
+<td>D</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A</td>
+<td>D</td>
+<td>C</td>
+<td>B</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>A</td>
+<td>C</td>
+<td>D</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>A</td>
+</tr>
+<tr>
+<td>8</td>
+<td>B</td>
+<td>D</td>
+<td>A</td>
+<td>C</td>
+</tr>
+<tr>
+<td>9</td>
+<td>B</td>
+<td>A</td>
+<td>D</td>
+<td>C</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td>C</td>
+<td>A</td>
+<td>D</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td>D</td>
+<td>C</td>
+<td>A</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td>A</td>
+<td>B</td>
+<td>D</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C</td>
+<td>B</td>
+<td>D</td>
+<td>A</td>
+</tr>
+<tr>
+<td>14</td>
+<td>C</td>
+<td>D</td>
+<td>A</td>
+<td>B</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C</td>
+<td>A</td>
+<td>D</td>
+<td>B</td>
+</tr>
+<tr>
+<td>16</td>
+<td>C</td>
+<td>B</td>
+<td>A</td>
+<td>D</td>
+</tr>
+<tr>
+<td>17</td>
+<td>C</td>
+<td>D</td>
+<td>B</td>
+<td>A</td>
+</tr>
+<tr>
+<td>18</td>
+<td>D</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+</tr>
+<tr>
+<td>19</td>
+<td>D</td>
+<td>B</td>
+<td>C</td>
+<td>A</td>
+</tr>
+<tr>
+<td>20</td>
+<td>D</td>
+<td>C</td>
+<td>A</td>
+<td>B</td>
+</tr>
+<tr>
+<td>21</td>
+<td>D</td>
+<td>A</td>
+<td>C</td>
+<td>B</td>
+</tr>
+<tr>
+<td>22</td>
+<td>D</td>
+<td>B</td>
+<td>A</td>
+<td>C</td>
+</tr>
+<tr>
+<td>23</td>
+<td>D</td>
+<td>C</td>
+<td>B</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+<p>We can notice that the element present in position 0 is the element whose index corresponds to the division of the state number by 6.
+6 corresponds to 3!, that is to say the factorial preceding that of the size of the array (4!).
+So we can write: <code>shuffle[0] = draw / factorial (array.length - 1)</code></p>
+<p>Then the index of the following elements corresponds to the remainder of the Euclidean division of the state number by the number of remaining elements to be placed.</p>
+<p><code>shuffle[i] = draw % array.length</code> <em>each placed element is removed from the array, so the array size decreases.</em></p>
+<pre class="prettyprint source lang-javascript"><code>function JADShuffleSimpleVersion(array) {
+    let tempArray = [...array]; // the array is copied in a new array to not alter the parameter
+    let result = [];
+    const draw = Math.floor(Math.random() * factorial(array.length));   // a state is randomly taken
+    let randomIndex = Math.trunc(draw / factorial(tempArray.length - 1));   // the first index outside the loop
+    for (let currentIndex = 0; currentIndex &lt; array.length; currentIndex ++) {
+        result.push(tempArray[randomIndex]);
+        tempArray.splice(randomIndex, 1);   // The placed element is removed from the array
+        randomIndex = draw % (array.length - (currentIndex + 1));   // calculation of the following index
+    }
+    return result;
+}
+</code></pre></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#factorial">factorial</a></li><li><a href="global.html#factorialNAndFactorialN_1">factorialNAndFactorialN_1</a></li><li><a href="global.html#JADShuffleOptimisedVersion">JADShuffleOptimisedVersion</a></li><li><a href="global.html#JADShuffleSimpleVersion">JADShuffleSimpleVersion</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Tue Dec 29 2020 00:15:48 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
