@@ -61,7 +61,7 @@ function JADShuffleSimpleVersion(array) {
     let tempArray = [...array]; // the array is copied in a new array to not alter the parameter
     let result = [];
     const draw = Math.floor(Math.random() * factorial(array.length));   // a state is randomly taken
-    let randomIndex = Math.trunc(draw / factorial(tempArray.length - 1));   // the first index is calculting outside the loop
+    let randomIndex = Math.trunc(draw / factorial(tempArray.length - 1));   // the first index outside the loop
     for (let currentIndex = 0; currentIndex < array.length; currentIndex ++) {
         result.push(tempArray[randomIndex]);
         tempArray.splice(randomIndex, 1);   // The placed element is removed from the array
