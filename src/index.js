@@ -9,13 +9,9 @@ function factorialNAndFactorialN_1(n) {
     };
 }
 
-function getDraw(factorial) {
-    return Math.floor(Math.random() * factorial);
-}
-
 function JADShuffleOptimisedVersion(array, factorial) {
     let tempArray = [...array];
-    const draw = getDraw(factorial.n);
+    const draw = Math.floor(Math.random() * factorial.n);
     let temporaryValue;
     let result = new Array(initialLength);
     let randomIndex = Math.trunc(draw / (factorial.n_1));
@@ -67,7 +63,7 @@ function FisherYatesShuffle(array) {
 
 let array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K','L','M','N','O','P','Q','R'];
 let initialLength = array.length;
-const nbTests = 10000000;
+const nbTests = 100000000;
 let t0, t1;
 
 t0 = new Date().getTime();

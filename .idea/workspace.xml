@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7015e505-ce7b-464f-aefe-d903debfadb9" name="Default Changelist" comment="Some tests and improvements">
+    <list default="true" id="7015e505-ce7b-464f-aefe-d903debfadb9" name="Default Changelist" comment="add tests of simple version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
@@ -54,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609168911464</updated>
-      <workItem from="1609168912591" duration="6628000" />
+      <workItem from="1609168912591" duration="8152000" />
     </task>
     <task id="LOCAL-00001" summary="add shuffle algo">
       <created>1609169818976</created>
@@ -84,7 +84,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609181466043</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add a simple and an advanced version">
+      <created>1609183556042</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609183556042</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add tests of simple version">
+      <created>1609183731145</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609183731145</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +108,8 @@
     <MESSAGE value="add shuffle algo" />
     <MESSAGE value="fix an unused variable" />
     <MESSAGE value="Some tests and improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some tests and improvements" />
+    <MESSAGE value="add a simple and an advanced version" />
+    <MESSAGE value="add tests of simple version" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tests of simple version" />
   </component>
 </project>
