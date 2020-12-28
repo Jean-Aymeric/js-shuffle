@@ -1,0 +1,16 @@
+{
+  "name": "shuffle",
+  "version": "1.0.0",
+  "description": "An experience of implementing an array shuffle algorithm",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^7.16.0",
+    "jsdoc": "^3.6.6"
+  }
+}
